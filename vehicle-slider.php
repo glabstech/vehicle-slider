@@ -29,9 +29,6 @@ function gltv_enqueue_js_css() {
 	wp_enqueue_script( 'gltv-customscript', plugins_url( '/admin/assets/js/script.js', __FILE__ ) );
 	wp_enqueue_script( 'gltv-jscolor', plugins_url( '/admin/assets/js/jscolor.js', __FILE__ ) );
 	
-	//wp_enqueue_script( 'gltv-customajax', plugins_url( '/admin/assets/js/ajax-request.js', __FILE__ ), array('jquery'), '1.0', true );
-	//wp_localize_script( 'gltv-customajax', 'gltv_request_ajax', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ));
-	
 	wp_enqueue_style( 'gltv-customstyle', plugins_url( '/admin/assets/css/style.css', __FILE__ ) );
 }
 
@@ -42,7 +39,6 @@ function gltv_enqueue_js_css() {
 add_action( 'wp_enqueue_scripts', 'gltv_enqueue_js_css_front_end' );
 function gltv_enqueue_js_css_front_end() {
 	wp_register_script( 'gltv-f-owlcarousel-js', plugins_url( '/assets/js/owl.carousel.min.js', __FILE__ ), array( 'jquery' ) );
-// 	wp_register_script( 'gtlv-f-custom-js', plugins_url( '/assets/js/script.js', __FILE__ ), array( 'jquery' ) );
 	
 	wp_register_style( 'gltv-f-owlcarousel-css', plugins_url( '/assets/css/owl.carousel.min.css', __FILE__ ) );
 	wp_register_style( 'gltv-f-themedefault-css', plugins_url( '/assets/css/owl.theme.default.min.css', __FILE__ ) );
