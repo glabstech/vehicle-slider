@@ -2,25 +2,18 @@
 add_action( 'admin_init', 'gltv_custom_meta_boxes' );
 function gltv_custom_meta_boxes() {
 	add_meta_box( 'gltv_id', 'Vehicle Color Variants', 'gltv_custom_meta_box_display', 'gltv', 'normal', 'high' );
-//   add_meta_box( 'gltv_id_2', 'Image Upload', 'gltv_cmb_image_upload', 'gltv', 'side', 'low' );
 }
 
 function gltv_custom_meta_box_display() {
 	global $post;
 	$meta = get_post_meta( $post->ID, 'gltv_meta_fields', true );
 	$meta2 = get_post_meta( $post->ID );
-	// $value = get_post_meta( $post->ID, 'my_key', true )
 	wp_nonce_field( 'gltv_nonce', 'gltv_nonce' );
 	
 	$defImage = GLTV_PLUGIN_ADMIN_GET_IMAGE_DEF.'default-car.png';
-	
 ?>
 
-	<div class="tab">
-		<button class="tablinks" id="defaultOpen">Tab Name</button>
-	</div>
-
-	<div id="repeatable-fieldset-one" class="tab-content">
+	<div id="repeatable-fieldset-one">
 		<div id="tbody">
 			
 			<div class="line-row">

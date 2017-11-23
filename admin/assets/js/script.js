@@ -39,7 +39,7 @@ jQuery(document).ready(function($) {
 			mediaUploader.open();
 		});
 		
-  });
+  	});
 	
 	
 	$(document).ready(function() {

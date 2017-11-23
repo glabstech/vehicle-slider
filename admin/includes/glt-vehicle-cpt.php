@@ -7,19 +7,19 @@ function gltv_custom_post_type() {
   register_post_type( 'gltv',
     array(
       'labels' => array(
-        'name' => 'Vehicle Variations',
-        'singular_name' => 'Vehicle Variation',
+        'name' => 'Vehicle Slider',
+        'singular_name' => 'Vehicle Slider',
         'add_new' => 'Add New',
-        'add_new_item' => 'Add New Vehicle Variation',
+        'add_new_item' => 'Add New Vehicle Slider',
         'edit' => 'Edit',
-        'edit_item' => 'Edit Vehicle Variation',
-        'new_item' => 'New Vehicle Variation',
+        'edit_item' => 'Edit Vehicle Slider',
+        'new_item' => 'New Vehicle Slider',
         'view' => 'View',
-        'view_item' => 'View Vehicle Variation',
-        'search_items' => 'Search Vehicle Variations',
-        'not_found' => 'No Vehicle Variations found',
-        'not_found_in_trash' => 'No Vehicle Variations found in Trash',
-        'parent' => 'Parent Vehicle Variation'
+        'view_item' => 'View Vehicle Slider',
+        'search_items' => 'Search Vehicle Slider',
+        'not_found' => 'No Vehicle Slider found',
+        'not_found_in_trash' => 'No Vehicle Slider found in Trash',
+        'parent' => 'Parent Vehicle Slider'
       ),
 
       'public' => true,
