@@ -2,7 +2,6 @@
 add_action( 'admin_init', 'gltv_custom_meta_boxes' );
 function gltv_custom_meta_boxes() {
 	add_meta_box( 'gltv_id', 'Vehicle Color Variants', 'gltv_custom_meta_box_display', 'gltv', 'normal', 'high' );
-//   add_meta_box( 'gltv_id_2', 'Image Upload', 'gltv_cmb_image_upload', 'gltv', 'side', 'low' );
 }
 
 function gltv_custom_meta_box_display() {
@@ -12,23 +11,10 @@ function gltv_custom_meta_box_display() {
 	wp_nonce_field( 'gltv_nonce', 'gltv_nonce' );
 	
 	$defImage = GLTV_PLUGIN_ADMIN_GET_IMAGE_DEF.'default-car.png';
-	
 ?>
 
-	<div class="tab">
-		<button class="tablinks" id="defaultOpen">Tab Name</button>
-	</div>
-
-	<div id="repeatable-fieldset-one" class="tab-content">
+	<div id="repeatable-fieldset-one">
 		<div id="tbody">
-			<div class="line-row">
-				<div class="col-left alignleft">
-					<label>Cutom Link</label>
-				</div>
-				<div class="col-right alignright">
-					<input type="text" name="custom_link" value="<?php if ( isset ( $meta2['custom_link'] ) ) echo $meta2['custom_link'][0]; ?>" />
-				</div>
-			</div>
 			
 			<div class="line-row">
 				<div class="col-left alignleft">
@@ -38,7 +24,29 @@ function gltv_custom_meta_box_display() {
 					<select name="carousel_type" id="carousel_type">
 						<option value="Default" <?php if ( isset ( $meta2['carousel_type'] ) ) selected( $meta2['carousel_type'][0], 'Default' ); ?>>Default</option>
 						<option value="Pop-up" <?php if ( isset ( $meta2['carousel_type'] ) ) selected( $meta2['carousel_type'][0], 'Pop-up' ); ?>>Pop-up</option>
-					</select>
+					</select><br>
+					<span class="description carousel-options">There are additional options below for Pop-up carousel type.</span>
+				</div>
+			</div>
+
+			<div class="line-row carousel-options">
+				<div class="col-left alignleft">
+					<label>Custom Link</label>
+				</div>
+				<div class="col-right alignright">
+					<input type="text" name="custom_link" value="<?php if ( isset ( $meta2['custom_link'] ) ) echo $meta2['custom_link'][0]; ?>" /><br>
+					<span class="description">This is where you want to redirect when you click the main / featured image.</span>
+				</div>
+			</div>
+
+			<div class="line-row carousel-options">
+				<div class="col-left alignleft">
+					<label>Redirect Option</label>
+				</div>
+				<div class="col-right alignright">
+					<input type="radio" name="redirect_option" value="_self" <?php checked( $meta2['redirect_option'][0], '_self' ); ?> >Same Window<br>
+					<input type="radio" name="redirect_option" value="_blank" <?php checked( $meta2['redirect_option'][0], '_blank' ); ?> >New Tab<br>
+					<span class="description">Choose whether to open the <b>custom link</b> in the same page or in a new tab.</span>
 				</div>
 			</div>
 			
@@ -203,6 +211,7 @@ function gltv_custom_meta_box_save( $post_id ) {
 	$defImage = GLTV_PLUGIN_ADMIN_GET_IMAGE_DEF.'default-car.png';
 	
 	$custom_link = $_POST['custom_link'];
+	$redirect_option = $_POST['redirect_option'];
 	$carousel_type = $_POST['carousel_type'];
 	
 	$color_name = $_POST['color_name'];
@@ -225,10 +234,13 @@ function gltv_custom_meta_box_save( $post_id ) {
 	}
 	
 	if ( isset( $custom_link ) ) { 
-    update_post_meta( $post_id, 'custom_link', sanitize_text_field( $custom_link ) );
+    	update_post_meta( $post_id, 'custom_link', sanitize_text_field( $custom_link ) );
+	}
+	if ( isset( $redirect_option ) ) { 
+    	update_post_meta( $post_id, 'redirect_option', sanitize_text_field( $redirect_option ) );
 	}
 	if ( isset( $carousel_type ) ) { 
-    update_post_meta( $post_id, 'carousel_type', sanitize_text_field( $carousel_type ) );
+    	update_post_meta( $post_id, 'carousel_type', sanitize_text_field( $carousel_type ) );
 	}
 	
 	if ( !empty( $new ) && $new != $old )

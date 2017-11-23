@@ -1,13 +1,27 @@
 <?php
- /*
- Plugin Name: Car Vehicle Slider
- Plugin URI: https://github.com/wdonayre/vehicle-slider
- Description: A simple plugin to include a Vehicle Carousel in any post/page
- Version: 1.0.0
- Author: Glabs Tech
- Author URI: http://glabs.tech/
- License: GPL2
- */
+/*
+Plugin Name: Car Vehicle Slider
+Plugin URI: https://github.com/wdonayre/vehicle-slider
+Description: A simple plugin to include a Vehicle Carousel in any post/page
+Version: 1.0.0
+Author: Glabs Tech
+Author URI: http://glabs.tech/
+License: GPL2
+License URI:  https://www.gnu.org/licenses/gpl-2.0.html
+
+{Car Vehicle Slider} is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+any later version.
+ 
+{Car Vehicle Slider} is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+ 
+You should have received a copy of the GNU General Public License
+along with {Car Vehicle Slider}. If not, see {License URI}.
+*/
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -15,7 +29,6 @@ if ( ! defined( 'GLTV_PLUGIN_ASSETS_JS_SCRIPT_PHP' ) ) define( 'GLTV_PLUGIN_ASSE
 if ( ! defined( 'GLTV_PLUGIN_ADMIN_GET_IMAGE_DEF' ) ) define( 'GLTV_PLUGIN_ADMIN_GET_IMAGE_DEF', plugin_dir_url( __FILE__ ).'admin/images/' );
 
 require_once ( plugin_dir_path(__FILE__) . '/admin/includes/glt-vehicle-cmb.php' );
-require_once ( plugin_dir_path(__FILE__) . '/admin/includes/glt-vehicle-cmb-image-upload.php' );
 require_once ( plugin_dir_path(__FILE__) . '/admin/includes/glt-vehicle-cpt.php' );
 require_once ( plugin_dir_path(__FILE__) . '/admin/includes/glt-vehicle-request.php' );
 require_once ( plugin_dir_path(__FILE__) . '/admin/includes/glt-vehicle-sc.php' );
@@ -51,5 +64,3 @@ function gltv_enqueue_js_css_front_end() {
 	wp_enqueue_style( 'gltv-f-themedefault-css' );
 	wp_enqueue_style( 'gltv-f-custom-css' );
 }
-
-// 	wp_enqueue_script( 'gltv-enqueue-id', plugins_url( '/assets/js/script.php', __FILE__ ), array( 'jquery' ) );

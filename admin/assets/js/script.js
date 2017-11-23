@@ -39,7 +39,7 @@ jQuery(document).ready(function($) {
 			mediaUploader.open();
 		});
 		
-  });
+  	});
 	
 	
 	$(document).ready(function() {
@@ -90,7 +90,20 @@ jQuery(document).ready(function($) {
 		alert('Shortcode Copied');
 	});
 
-	// IMAGE UPLOAD SCRIPT
+
+
+	var popup = $("#carousel_type").attr('value');
+	if ( popup == 'Pop-up') {
+		$(".carousel-options").show();
+	}
+
+	$('#carousel_type').change(function(){
+		if ( this.value == 'Pop-up') {
+			$(".carousel-options").show();
+		} else {
+			$(".carousel-options").hide();
+		}
+	});
 	
 	
 });
