@@ -54,7 +54,7 @@ function gltv_custom_meta_box_display() {
 	if ( $meta ) :
 		foreach ( $meta as $i => $data ) {
 ?>
-			<div class="holder">
+			<div class="glt-vs-holder holder">
 				<p>
 					<a id="remove" class="button" title="Remove row">x</a>
 					<a id="sort" class="button" title="Reposition">|||</a>
@@ -100,7 +100,7 @@ function gltv_custom_meta_box_display() {
 	else :
 		// show a blank one
 ?>
-			<div class="holder">
+			<div class="holder glt-vs-holder">
 				<p>
 					<a id="remove" class="button" title="Remove row">x</a>
 					<a id="sort" class="button" title="Reposition">|||</a>
@@ -145,7 +145,7 @@ function gltv_custom_meta_box_display() {
 		<?php endif; ?>
 
 			<!-- empty hidden one for jQuery -->
-			<div class="holder empty-row screen-reader-text">
+			<div class="glt-vs-holder holder empty-row screen-reader-text">
 				<p>
 					<a id="remove" class="button" title="Remove row">x</a>
 					<a id="sort" class="button" title="Reposition">|||</a>

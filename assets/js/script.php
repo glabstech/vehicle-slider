@@ -105,12 +105,15 @@
             loop: false,
             margin: 10,
             nav: false,
+            singleItem:true,
+            slideSpeed : 10,
+            paginationSpeed : 10,
             responsive: {
                 0: {
                     items: 1
                 },
                 600: {
-                    items: 3
+                    items: 1
                 },
                 1000: {
                     items: 1
@@ -136,8 +139,15 @@
             var me = $(this);
             var color_name = me.find("span[itemprop='car_attr']").data("color");
             var color_hex = me.find("span[itemprop='car_attr']").data("hex");
+            console.log(color_hex);
             var idx = me.index();
-            var bullet = $(".owl-dots .owl-dot");
+
+            //new owl carousel control support
+            var bullet = $(me).closest('.owl-carousel').find('.owl-controls .owl-pagination .owl-page');
+            bullet.eq(idx).find("span").css("background-color", color_hex);
+            
+            //old owl carousel control support
+            bullet = $(me).closest('.owl-carousel').find('.owl-controls .owl-dots .owl-dot');
             bullet.eq(idx).find("span").css("background-color", color_hex);
         });
     }

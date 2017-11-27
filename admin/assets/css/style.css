@@ -1,13 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans);
-
-.holder {
+.holder.glt-vs-holder {
     color: green;
     padding: 0 15px;
     border: 1px dashed #123456;
     background-color: #f9ffe5;
     margin-bottom: 20px;
 }
-.holder img {
+
+.glt-vs-holder.holder img {
     max-width: 400px;
 }
 
@@ -16,15 +16,17 @@
 }
 
 
-
 /* Style the tab */
+
 div.tab {
     overflow: hidden;
     border-bottom: 1px solid #ccc;
     background-color: #f1f1f1;
 }
 
+
 /* Style the buttons inside the tab */
+
 div.tab button {
     background-color: #ddd;
     float: left;
@@ -38,14 +40,18 @@ div.tab button {
     font-size: 17px;
 }
 
+
 /* Style the form label and input */
+
 .line-row {
     padding: 15px 10px;
     overflow: hidden;
 }
+
 .col-left {
-    width: 30%;
+    width: 25%;
 }
+
 .col-left label {
     color: #23282d;
     cursor: default;
@@ -53,29 +59,35 @@ div.tab button {
     font-weight: 600;
     text-shadow: none;
 }
+
 .col-right {
     width: 70%;
 }
+
 .col-right input[type=text] {
     font-size: 16px;
     width: 300px;
     height: 32px;
 }
+
 .col-right select {
     font-size: 16px;
     height: 30px;
 }
 
+
 /* Style for Custom Column Shortcode Copy */
+
 #cc_txtfld {
-    border:none;
-    background:transparent;
-    box-shadow:none;
-    cursor:pointer;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
 }
 
 
 /* Carousel Options */
+
 .carousel-options {
     display: none;
 }

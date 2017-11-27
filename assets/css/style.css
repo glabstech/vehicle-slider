@@ -1,30 +1,39 @@
 /*-----------------------------------------------------------------------
                       OWL CAROUSEL PROPERTIES - GLT
 ------------------------------------------------------------------------*/
+
+
 /*--Controls--*/
-.owl-dot.active{
+
+.owl-dot.active {
     -webkit-box-shadow: 0px 0px 2px 2px rgb(255, 255, 255);
     -moz-box-shadow: 0px 0px 2px 2px rgb(255, 255, 255);
     box-shadow: 0px 0px 2px 2px rgb(255, 255, 255);
-    border:1px dotted #000;
-    border-radius:50%;
+    border: 1px dotted #000;
+    border-radius: 50%;
 }
-.owl-dot span{
-    margin:5px;
-    border:1px solid #000;
+
+.owl-dot span {
+    margin: 5px;
+    border: 1px solid #000;
 }
-.owl-dot{
-    margin:10px;
+
+.owl-dot {
+    margin: 10px;
 }
+
+
 /*--Image Properties and Title--*/
-.img-wrap{
-  width:500px;
-  margin:auto;
+
+.img-wrap {
+    /* width:500px; */
+    margin: auto;
 }
-.thumb-info h4{
-    text-align:center;
-    font-size:30px;
-    font-weight:900;
+
+.thumb-info h4 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
 }
 
 .color-carousel-close {
@@ -44,28 +53,37 @@
     margin: 0 auto;
     float: right;
 }
-.color-carousel-close i:before{
+
+.color-carousel-close i:before {
     content: 'x';
-    top:-20px;
-    text-align:center;
+    top: -20px;
+    text-align: center;
 }
 
-.main-image{
-  text-align:center;
+.main-image {
+    text-align: center;
 }
-.header{
-  text-align: center;
+
+.header {
+    text-align: center;
 }
+
 .buttons-wrapper {
-    text-align:center;
-    margin:10px;
+    text-align: center;
+    margin: 10px;
 }
-.buttons-wrapper button{
-    background:red;
-    border:none;
-    padding:10px;
-    color:white;
+
+.buttons-wrapper button {
+    background: red;
+    border: none;
+    padding: 10px;
+    color: white;
 }
-.buttons-wrapper button:nth-child(1){
-    margin-right:5px;
+
+.buttons-wrapper button:nth-child(1) {
+    margin-right: 5px;
+}
+
+.slider-area figcaption .thumb-info {
+    width: 100%;
 }
